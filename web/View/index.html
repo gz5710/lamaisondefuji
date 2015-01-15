@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Enter there short description of your site" />
+		<title>Resto Jardin Bambou</title>
+		<!-- BEGIN SCRIPT INCLUDE -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/nivoSlider.js"></script>
+		<script type="text/javascript" src="js/lightBox.js"></script>
+		<script type="text/javascript" src="js/fancyCaption.js"></script>
+		<script type="text/javascript" src="js/jqueryui.js"></script>
+		<script type="text/javascript" src="js/general.js"></script>
+		<script type="text/javascript" src="js/twitterFeed.js"></script>
+		<!-- END SCRIPT INCLUDE -->
+		<!-- BEGIN STYLE INCLUDE -->
+        <link rel='shortcut icon' type='image/x-icon' href='images/logo.ico' />
+		<link rel="stylesheet" type="text/css" href="css/nivo-slider.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" />
+		<link rel="stylesheet" type="text/css" href="css/fancy-caption.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.tweet.html" />
+		<!-- END STYLE INCLUDE -->
+		<!--GOOGLE MAP-->
+		<style>
+        #map_canvas {
+            width: 300px;
+            height: 207px;
+            background-color: #CCC;
+              }
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+            <script>
+              function initialize() {
+                  //load the map.
+                var map_canvas = document.getElementById('map_canvas');
+                var map_options = {
+                  center: new google.maps.LatLng(48.930718, 2.431364),
+                  zoom: 14,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(map_canvas, map_options)
+                //add a marker
+                var iconBase = 'images/';
+                var marker = new google.maps.Marker({
+                  position: map_options.center,
+                  map: map,
+                  icon: iconBase + 'RedPinDown.png'
+                });
+              }
+              google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
+        <!--/GOOGLE MAP-->
+	</head>
+	<body>
+		<!-- BEGIN HEADER -->
+		<header id="scrolltop">
+			<div id="header" class="header-main">
+				<div id="header-content">
+					<div id="header-telephone">
+						<img src="images/phone.png" alt="Phone image" />
+						<span>Appelez : +33 (0)1 48 31 44 48</span>
+					</div>
+					<div id="menu">
+						<ul id="menu-item">
+							<li id="item-home"><a href="index.html"><span class="menu-item-text1">ACCEUIL</span><span class="menu-item-text2">PAGE</span><span class="menu-item-text3">D'ACCEUIL</span></a></li>
+							<li id="item-menu"><a href="menu.html"><span class="menu-item-text1">MENU</span><span class="menu-item-text2">LISTE DES</span><span class="menu-item-text3">PLATS</span></a></li>
+							<li id="item-gallery"><a href="commandez.html"><span class="menu-item-text1">COMMANDEZ</span><span class="menu-item-text2">PANIER</span><span class="menu-item-text3">CHOIX</span></a></li>
+							<li id="item-contact"><a href="contact.html"><span class="menu-item-text1">CONTACT</span><span class="menu-item-text2">REJOIGNEZ</span><span class="menu-item-text3">NOUS</span></a></li>	
+						</ul>
+					</div>					
+				</div>
+			</div>	
+		</header>
+		<!-- END HEADER -->
+		<!-- BEGIN MAIN SLIDER -->
+		<div id="slider-bg">
+			<div id="slider-align">
+				<div class="slider-wrapper theme-pascal">
+					<div id="slider" class="nivoSlider">
+						<!-- Place there a picture that will be displayed in main slider -->
+						<img src="../embededPanier/image/Cover/slider1.jpg" alt="" title="#main1" />
+						<img src="../embededPanier/image/Cover/slider2.jpg" alt="" title="#main2" />
+						<img src="../embededPanier/image/Cover/slider3.jpg" alt="" title="#main3" />
+					</div>
+					<!-- Place there a caption text that will be displayed with a slider picture (id of div should been equal to the value of image's title attribute) -->
+					<!--<div id="main1" class="nivo-html-caption">
+						<div class="slider-caption-wrap">Maki<br>Arc-en-ciel</div>	
+					</div>
+					<div id="main2" class="nivo-html-caption">
+						<div class="slider-caption-wrap">plat 2</div>	
+					</div>
+					<div id="main3" class="nivo-html-caption">
+						<div class="slider-caption-wrap">Dragon<br>Roll</div>	
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<!-- END MAIN SLIDER -->
+		<div id="main-content" class="main-page-content">
+			<!-- BEGIN MAIN CONTENT -->
+			<!-- END MAIN CONTENT -->
+		</div>
+		<div class="clear"></div>
+		<!-- BEGIN PREFOOTER -->
+		<div id="prefooter-main-wrap">
+			<div id="prefooter-content">
+				<a href="#scrolltop" class="scroll"><img src="images/top.png" id="scrolltop-img" alt="Scroll to top" /></a>
+				<div id="findus">
+					<div class="preheader">COMMENT</div>
+					<h1>NOUS TROUVER</h1>
+					<img src="images/adresspin.png" alt="Pin icon" />
+					<div id="adress-wrap">
+						<p id="restaurant-name">Resto Jardin de Bambou</p>
+						<p id="restaurant-address">106 avenue Marceau, 93700 Drancy</p>
+					</div>
+					<div id="map_canvas"></div>
+				</div>
+				<div id="hours">
+					<div class="preheader">RESTAURANT</div>
+					<h1>OUVERTURE</h1>
+					<div class="hours-head">MIDI</div>
+					<div class="event-wrap">
+						<div class="event-date">Fermé samedi midi</div>
+						<div class="date">Lundi - Dimanche</div><div class="time">11:00-14:30</div>
+						<div class="clear"></div>
+					</div>
+					<div class="footer-divider"></div>
+					<div class="hours-head">DINNER</div>
+					<div class="event-wrap">
+						<div class="event-date">7 J / 7</div>
+						<div class="date">Lundi - Dimanche</div><div class="time">18:00-22:30</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div id="events">
+					<div class="preheader">EN LIGNE</div>
+					<h1>COMMANDEZ</h1>
+					<div class="event-wrap">
+						<div class="event-date">Fermé samedi midi</div>
+						<div class="event-header">SERVICE DE COMMANDER EN LIGNE</div>
+						<div class="event-content">
+                        <p>Commandez entre</p> <p>11h et 12h (18h et 19)</p><br>
+                        <p>Nous offerons les services de commander en ligne, veuillez en bien profiter !</p><br>
+                        <p>Voir les promotions du jour sur Facebook: <a href="#">Jardin de Bambou</a></p>
+                        </div>
+						<div class="event-readmore"><a href="commandez.html">SAVOIR PLUS ...</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PREFOOTER -->
+		<!-- BEGIN FOOTER -->
+		<div id="footer">
+			<div id="footer-content-main">
+				<div id="footer-copyright">&copy; Copyright 2014. JARDIN DE BAMBOU All rights reserved. Proudly created by <a target="_blank" style="color:#53FFFF" href="http://www.a19.fr/" title="Atelier 19">Atelier 19</a></div>
+			</div> 
+		</div>
+		<!-- END FOOTER -->
+
+</body>
+</html>

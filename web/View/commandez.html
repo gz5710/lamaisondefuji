@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+	
+<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="Enter there short description of your site" />
+		<title>COMMANDEZ - Resto Jardin Bambou</title>
+		<!-- BEGIN SCRIPT INCLUDE -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/nivoSlider.js"></script>
+		<script type="text/javascript" src="js/lightBox.js"></script>
+		<script type="text/javascript" src="js/fancyCaption.js"></script>
+		<script type="text/javascript" src="js/jqueryui.js"></script>
+		<!--<script type="text/javascript" src="js/general.js"></script>-->
+		<script type="text/javascript" src="js/twitterFeed.js"></script>
+		<!-- END SCRIPT INCLUDE -->
+		<!-- BEGIN STYLE INCLUDE -->
+        <link rel='shortcut icon' type='image/x-icon' href='images/logo.ico' />
+		<link rel="stylesheet" type="text/css" href="css/nivo-slider.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" />
+		<link rel="stylesheet" type="text/css" href="css/fancy-caption.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.tweet.html" />
+		<!-- END STYLE INCLUDE -->
+		<!-- GOOGLE MAP -->
+		<style>
+        #map_canvas {
+            width: 300px;
+            height: 207px;
+            background-color: #CCC;
+              }
+        </style>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+            <script>
+              function initialize() {
+                  //load the map.
+                var map_canvas = document.getElementById('map_canvas');
+                var map_options = {
+                  center: new google.maps.LatLng(48.930718, 2.431364),
+                  zoom: 14,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                var map = new google.maps.Map(map_canvas, map_options)
+                //add a marker
+                var iconBase = 'images/';
+                var marker = new google.maps.Marker({
+                  position: map_options.center,
+                  map: map,
+                  icon: iconBase + 'RedPinDown.png'
+                });
+              }
+              google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
+        <!-- END GOOGLE MAP -->
+        
+        <!-- Panier References -->
+        
+        	<link rel="stylesheet" type="text/css" href="../embededPanier/Pstyle.css"/>
+            <script defer type="text/javascript" src="../embededPanier/js.js" language="javascript" ></script>
+            <script type="text/javascript" src="../embededPanier/json2.js" language="javascript" ></script>            
+            
+			<!-- Tree Navigation -->
+            <link rel="StyleSheet" href="../embededPanier/dtree.css" type="text/css" />
+            <script type="text/javascript" src="../embededPanier/dtree.js"></script>
+            <!-- End Tree Navigation -->
+            
+        	<!--LightBox-->
+            <link href="../embededPanier/lightbox/css/lightbox.css" rel="stylesheet" />
+            <script src="../embededPanier/lightbox/js/jquery-1.11.0.min.js"></script>
+            <script src="../embededPanier/lightbox/js/lightbox.min.js"></script>
+            <!--LightBox-->
+            
+            <!--HighSlide-->
+            <link rel="stylesheet" type="text/css" href="../embededPanier/highslide/highslide.css" />
+            <script type="text/javascript" src="../embededPanier/highslide/highslide.js"></script>
+            <!--/HighSlide-->
+            
+            <!--HighSlide-->
+            <script type="text/javascript">
+            //<![CDATA[
+            hs.registerOverlay({
+                html: '<div class="closebutton" onclick="return hs.close(this)" title="Close"></div>',
+                position: 'top right',
+                fade: 2 // fading the semi-transparent overlay looks bad in IE
+            });
+            
+            
+            hs.graphicsDir = '../embededPanier/highslide/graphics/';
+            hs.wrapperClassName = 'borderless';
+            //]]>
+            </script>
+            <!--/HighSlide-->
+            
+        <!-- End Panier References -->
+
+	</head>
+	<body>
+		<!-- BEGIN HEADER -->
+		<header id="scrolltop">
+			<div id="header" class="header-main">
+				<div id="header-content">
+					<div id="header-telephone">
+						<img src="images/phone.png" alt="Phone image" />
+						<span>Appelez : +33 (0)1 48 31 44 48</span>
+					</div>
+					<div id="menu">
+						<ul id="menu-item">
+							<li id="item-home"><a href="index.html"><span class="menu-item-text1">ACCEUIL</span><span class="menu-item-text2">PAGE</span><span class="menu-item-text3">D'ACCEUIL</span></a></li>
+							<li id="item-menu"><a href="menu.html"><span class="menu-item-text1">MENU</span><span class="menu-item-text2">LISTE DES</span><span class="menu-item-text3">PLATS</span></a></li>
+							<li id="item-gallery"><a href="commandez.html"><span class="menu-item-text1">COMMANDEZ</span><span class="menu-item-text2">PANIER</span><span class="menu-item-text3">CHOIX</span></a></li>
+							<li id="item-contact"><a href="contact.html"><span class="menu-item-text1">CONTACT</span><span class="menu-item-text2">REJOIGNEZ</span><span class="menu-item-text3">NOUS</span></a></li>	
+						</ul>
+					</div>					
+				</div>
+			</div>	
+		</header>
+		<!-- END HEADER -->
+		<!-- BEGIN PAGE TITLE -->
+		<div id="page-title-wrap">
+			<div id="page-title" class="commandez-title">
+				<div id="page-title-content">COMMANDEZ</div>
+				<img id="left-ornament" src="images/left_ornament.png" alt="Left ornament" />
+				<img id="right-ornament" src="images/right_ornament.png" alt="Right ornament" />
+			</div>
+			<div id="page-title-descr">(Commandez en ligne - Livraison rapide)</div>
+		</div>
+		<!-- END PAGE TITLE -->
+		<!-- BEGIN GALLERY CONTENT -->
+		<div id="main-content">
+			<div id="gallery-wrap">
+            <!-- Command Zone -->
+				<div id="divScreenLocker"></div>
+                    <div id="divHeader">
+                
+                    </div>
+                    <div id="divPanelPanier">
+                        <p>Votre panier</p>
+                        <div id="divTotalPrice">Total:  0.00 €</div>
+                        <img src="../embededPanier/image/Others/btnValidez.png" width="80" height="40" alt="Validez" onclick="locking();" style="cursor:pointer;"/>
+                        <!--<a id="validez" href="JavaScript:;" onclick="locking();" >Validez</a>-->
+                    </div> 
+                    <div id="divCommand">
+                        <table id="tabCommand">
+                        </table>
+                    </div>
+                    <div id="divTreeNav">
+                        <script type="text/javascript">
+                        <!--
+                
+                        d = new dTree('d');
+                
+                        d.add(0,-1,"La Carte");
+                        d.add(1,0,"Specialité Chinoise");
+                            d.add(9,1,"Les portages à savoures","javascript:selectCategorie('1-1 Les portages a savoures')");
+                            d.add(10,1,"Les saveurs craquantes","javascript:selectCategorie('1-2 Les saveurs craquantes')");
+                            d.add(11,1,"Vapeurs","javascript:selectCategorie('1-3 Vapeurs')");
+                            d.add(12,1,"Une touche de fraîcheur","javascript:selectCategorie('1-4 Une touche de fraicheur')");
+                            d.add(13,1,"Brochettes","javascript:selectCategorie('1-5 Brochettes')");
+                            d.add(14,1,"Viandes");
+                                d.add(19,14,"Poulet","javascript:selectCategorie('1-6-1 Poulet')");
+                                d.add(20,14,"Boeuf","javascript:selectCategorie('1-6-2 Boeuf')");
+                                d.add(21,14,"Porc","javascript:selectCategorie('1-6-3 Porc')");
+                                d.add(22,14,"Canard","javascript:selectCategorie('1-6-4 Canard')");
+                            d.add(15,1,"Fruits de mer");
+                                d.add(23,15,"Crevettes","javascript:selectCategorie('1-7-1 Crevettes')");
+                                d.add(24,15,"Poisson","javascript:selectCategorie('1-7-2 Poisson')");
+                                d.add(25,15,"Calamar","javascript:selectCategorie('1-7-3 Calamar')");				
+                                d.add(26,15,"Cuisse de grenouilles","javascript:selectCategorie('1-7-4 Cuisse de grenouilles')");
+                                d.add(27,15,"Coquilles st-jacques","javascript:selectCategorie('1-7-5 Coquilles st-jacques')");
+                            d.add(16,1,"Accompagnement","javascript:selectCategorie('1-8 Accompagnement')");
+                            d.add(17,1,"Menu midi","javascript:selectCategorie('1-9 Menu midi')");
+                            d.add(18,1,"Menu","javascript:selectCategorie('1-10 Menu')");
+                        d.add(2,0,"Specialité Japonaise");
+                            d.add(30,2,"Hors d'oeuvres","javascript:selectCategorie('2-1 Hors doeuvres')");
+                            d.add(31,2,"Saumon roll","javascript:selectCategorie('2-2 Saumon roll')");
+                            d.add(32,2,"Maki neige","javascript:selectCategorie('2-3 Maki neige')");
+                            d.add(33,2,"California","javascript:selectCategorie('2-4 California')");
+                            d.add(34,2,"Maki aneth","javascript:selectCategorie('2-5 Maki aneth')");
+                            d.add(35,2,"Egg maki","javascript:selectCategorie('2-6 Egg maki')");
+                            d.add(36,2,"Maki printemps","javascript:selectCategorie('2-7 Maki printemps')");
+                            d.add(37,2,"Maki crusty","javascript:selectCategorie('2-8 Maki crusty')");
+                            d.add(38,2,"Maki","javascript:selectCategorie('2-9 Maki')");
+                            d.add(39,2,"Maki tobiko","javascript:selectCategorie('2-10 Maki tobiko')");
+                            d.add(40,2,"Soya Rolla","javascript:selectCategorie('2-11 Soya Rolla')");
+                            d.add(41,2,"Sushi","javascript:selectCategorie('2-12 Sushi')");
+                            d.add(42,2,"Temaki","javascript:selectCategorie('2-13 Temaki')");
+                            d.add(43,2,"Sashimi","javascript:selectCategorie('2-14 Sashimi')");
+                            d.add(44,2,"Yakitori","javascript:selectCategorie('2-15 Yakitori')");
+                            d.add(45,2,"Makis spéciaux","javascript:selectCategorie('2-16 Makis speciaux')");
+                            d.add(46,2,"Menu midi","javascript:selectCategorie('2-17 Menu midi')");
+                            d.add(47,2,"Menu brochettes","javascript:selectCategorie('2-18 Menu brochettes')");
+                            d.add(48,2,"Menu poisson","javascript:selectCategorie('2-19 Menu poisson')");
+                            d.add(49,2,"Menu mixte","javascript:selectCategorie('2-20 Menu mixte')");
+                            d.add(50,2,"Menu chirachi","javascript:selectCategorie('2-21 Menu chirachi')");
+                            d.add(51,2,"Menu bateaux","javascript:selectCategorie('2-22 Menu bateaux')");
+                            d.add(52,2,"Menu plateau","javascript:selectCategorie('2-23 Menu plateau')");
+                        d.add(3,0,"Specialité Maison");
+                            d.add(53,3,"Donburi","javascript:selectCategorie('3-1 Donburi')");
+                            d.add(54,3,"Menu frit","javascript:selectCategorie('3-2 Menu frit')");
+                            d.add(55,3,"Udon","javascript:selectCategorie('3-3 Udon')");
+                            d.add(56,3,"Itame mono","javascript:selectCategorie('3-4 Itame mono')");
+                        d.add(4,0,"Specialité Thaïlandaise","javascript:selectCategorie('4 Specialite thailandaise')");
+                        d.add(5,0,"Menu Enfant","javascript:selectCategorie('5 Menu enfant')");
+                        //d.add(6,0,"Formule à Volonte");
+                        d.add(7,0,"Desserts","javascript:selectCategorie('7 Desserts')");
+                        d.add(8,0,"Boisson et Vin");
+                            d.add(57,8,"Boissons et Bière","javascript:selectCategorie('8-1 Boissons et biere')");
+                            d.add(58,8,"Vins","javascript:selectCategorie('8-2 Vins')");
+                        /*d.add(2,0,"Node 2","example01.html");
+                        d.add(3,1,"Node 1.1","example01.html");
+                        d.add(4,0,"Node 3","example01.html");
+                        d.add(5,3,"Node 1.1.1","example01.html");
+                        d.add(6,5,"Node 1.1.1.1","example01.html");
+                        d.add(7,0,"Node 4","example01.html");
+                        d.add(8,1,"Node 1.2","example01.html");
+                        d.add(9,0,"My Pictures","example01.html","Pictures I\"ve taken over the years","","","img/imgfolder.gif");
+                        d.add(10,9,"The trip to Iceland","example01.html","Pictures of Gullfoss and Geysir");
+                        d.add(11,9,"Mom\"s birthday","example01.html");
+                        d.add(12,0,"Recycle Bin","example01.html","","","img/trash.gif");*/
+                
+                        document.write(d);
+                        //-->
+                        </script>
+                    </div>
+                    <div id="divMenu">
+                        <div id="divFormLocker" class="divEmailForm">
+                        </div>
+                        <div id="divEmailForm" class="divEmailForm" align="center">
+                          <table width="380" height="230" border="0" cellpadding="0" cellspacing="0" >
+                            <tr>
+                              <td style="background-color:#76b015;color:#fff;padding-right:4px;padding-top:2px;font-weight:bold;font-size:12px;" height="50" valign="middle">
+                                <div class="formTitleFont"> Confirmation &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                <a href="JavaScript:;" class="formTitleFont"  onClick="closeForm(this);">Fermez</a></div>
+                              </td>
+                            </tr>
+                            <tr><td align="center"><input type="radio" name="LouE" value="E" checked="checked" onfocus="EorL(this.value)"/>Emporter <input type="radio" name="LouE" value="L" onclick="EorL(this.value)"/>Livraison</td></tr>
+                            <tr><td align="center"><input id="tbName" type="text" placeholder="NOM *"/></td></tr>
+                            <tr><td align="center"><input id="tbTel" type="text" placeholder="PHONE *"/></td></tr>
+                            <tr><td align="center"><input id="tbEmail" type="text" placeholder="EMAIL *"/></td></tr>
+                            <tr><td align="center"><input id="tbAddress" type="text" placeholder="ADRESSE *" style="display:none"/></td></tr>
+                            <tr><td align="center">Attente minimum de 45min</td></tr>
+                            <tr><td align="center" id="opHeureE">
+                                    Cherchez après <select>
+                                                      <option value="1" selected="selected">1 h</option>
+                                                      <option value="2">2 h</option>
+                                                      <option value="3">3 h</option>
+                                                      <option value="4">4 h</option>
+                                                    </select></td></tr>
+                            <tr><td align="center" id="opHeureL" style="display:none">
+                                        Livre vers <select>
+                                                      <option selected="selected">10:00</option>
+                                                      <option>11:00</option>
+                                                      <option>12:00</option>
+                                                      <option>13:00</option>
+                                                      <option>14:00</option>
+                                                      <option>15:00</option>
+                                                      <option>16:00</option>
+                                                      <option>17:00</option>
+                                                      <option>18:00</option>
+                                                      <option>19:00</option>
+                                                      <option>20:00</option>
+                                                      <option>21:00</option>
+                                                      <option>22:00</option>
+                                                    </select></td></tr>
+                            <tr><td align="center"><textarea id="tbMessage" cols="40" rows="5" style="width:150px; height:50px;" maxlength='500' placeholder="MESSAGE (MAX 500)"></textarea></td></tr>
+                            <tr><td align="center"><table width="0" border="0">
+                                                                      <tr align="center">
+                                                                        <th>
+                                                                        Vous payez par: 
+                                                                        </th>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td><input type="checkbox" name="paiement" value="Espèce" checked="checked"/>Espèce</td>
+                                                                        <td><input type="checkbox" name="paiement" value="CB"/>CB<br /></td>
+                                                                      </tr>
+                                                                      <tr>
+                                                                        <td><input type="checkbox" name="paiement" value="Chequè"/>Chèque</td>
+                                                                        <td><input type="checkbox" name="paiement" value="Resto Ticket"/>Ticket Resto</td>
+                                                                      </tr>
+                                                                    </table>
+                            </td></tr>
+                            <tr><td align="center"><a href="javascript:;" onclick="confirmForm();">Confirmez</a></td></tr>
+                          </table>
+                        </div>
+                        <table id="tabMenu">
+                        </table>
+                    </div>			
+            <!-- End Command Zone -->
+			</div>
+			<div class="clear"></div>
+			<div id="page-change" class="gallery-page-change">
+					<h2>Comment commander ?</h2>
+Commandez simplement : faites votre choix, puis modifiez la quantité à votre guise. Puis cliquez sur valider, et suivez le formulaire.
+			</div>		
+		</div>
+		<!-- END GALLERY CONTENT -->	
+		<div class="clear"></div>
+		<!-- BEGIN PREFOOTER -->
+		<div id="prefooter-main-wrap">
+			<div id="prefooter-content">
+				<a href="#scrolltop" class="scroll"><img src="images/top.png" id="scrolltop-img" alt="Scroll to top" /></a>
+				<div id="findus">
+					<div class="preheader">COMMENT</div>
+					<h1>NOUS TROUVER</h1>
+					<img src="images/adresspin.png" alt="Pin icon" />
+					<div id="adress-wrap">
+						<p id="restaurant-name">Resto Jardin de Bambou</p>
+						<p id="restaurant-address">106 avenue Marceau, 93700 Drancy</p>
+					</div>
+					<div id="map_canvas"></div>
+				</div>
+				<div id="hours">
+					<div class="preheader">RESTAURANT</div>
+					<h1>OUVERTURE</h1>
+					<div class="hours-head">MIDI</div>
+					<div class="event-wrap">
+						<div class="event-date">Fermé samedi midi</div>
+						<div class="date">Lundi - Dimanche</div><div class="time">11:00-14:30</div>
+						<div class="clear"></div>
+					</div>
+					<div class="footer-divider"></div>
+					<div class="hours-head">DINNER</div>
+					<div class="event-wrap">
+						<div class="event-date">7 J / 7</div>
+						<div class="date">Lundi - Dimanche</div><div class="time">18:00-22:30</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div id="events">
+					<div class="preheader">EN LIGNE</div>
+					<h1>COMMANDEZ</h1>
+					<div class="event-wrap">
+						<div class="event-date">Fermé samedi midi</div>
+						<div class="event-header">SERVICE DE COMMANDER EN LIGNE</div>
+						<div class="event-content">
+                        <p>Commandez entre</p> <p>11h et 12h (18h et 19)</p><br>
+                        <p>Nous offerons les services de commander en ligne, veuillez en bien profiter !</p><br>
+                        <p>Voir les promotions du jour sur Facebook: <a href="#">Jardin de Bambou</a></p>
+                        </div>
+						<div class="event-readmore"><a href="commandez.html">SAVOIR PLUS ...</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END PREFOOTER -->
+		<!-- BEGIN FOOTER -->
+		<div id="footer">
+			<div id="footer-content-main">
+				<div id="footer-copyright">&copy; Copyright 2014. JARDIN DE BAMBOU All rights reserved. Proudly created by <a target="_blank" style="color:#53FFFF" href="http://www.a19.fr/" title="Atelier 19">Atelier 19</a></div>
+			</div> 
+		</div>
+		<!-- END FOOTER -->
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+
+    "name": "Administrator/resume",
+    
+    "authors": [
+        
+	{
+            
+        	"name": "Bruce GONG",
+            
+		"email": "bruce.gong.tmax@gmail.com"
+        
+	}
+    
+	],
+
+    "require": {
+
+
+	"doctrine/dbal": "2.2.*",
+	"monolog/monolog": ">=1.0.0",
+        "silex/silex": "@stable",
+        "swiftmailer/swiftmailer": "@stable"
+    }
+
+}
+	
