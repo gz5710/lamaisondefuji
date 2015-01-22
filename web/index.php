@@ -35,36 +35,43 @@ $app->get('/loadImages', function(Application $app, Request $req) use ($app) {
 			$colNum = 3;	//how many elements lying in one row. The table will allocate the space(Width and Height) automatically to the images.
 			$isDisplay = '';
 			$isNextLine = '';
-			$isLeft = '';
+			$isLeft = " align='center' ";
 			$itemImgClass = 'twoXthree';
 			
-			if($folder == '1-9 Menu midi')
+			if($folder=='15 brochette' || $folder=='16-1 entree' || $folder=='16-2 sushi' || $folder=='16-3 maki' || $folder=='16-4 sashimis' || $folder=='16-5 temaki') //display words only by hiding the image.
 			{
-				$colNum = 2;
-				$itemImgClass = 'threeXtwo';
-			}else if($folder=='plats chinois' || $folder=='plats thailandais') //display words only by hiding the image.
-				{
-					//display=none;
-					$colNum = 1;
-					$isDisplay = 'style="Display:none;"';
-					$isNextLine = ' - ';
-					$isLeft = " align='left' ";
-				}else if($folder=='1-10 Menu' || $folder == '2-23 Menu plateau')
+				$colNum = 1;
+				$itemImgClass = 'sixXhalf';
+				/*//display=none;
+				$colNum = 1;
+				$isDisplay = 'style="Display:none;"';
+				$isNextLine = ' - ';
+				$isLeft = " align='left' ";*/
+			}else if($folder=='9 tataki' || $folder=='10 tartare')
 					{
-						$colNum = 1;
+						$colNum = 2;
 						$itemImgClass = 'sixXtwo';
-					}else if($folder=='2-22 Menu bateaux')
-						{
-							$colNum = 1;
-							$itemImgClass = 'sixXthree';
-						}
-			
-			//a special rule of menu thailandais(fuck jardinbambou!)
-			if($name == 'menu thailandais')
-			{
-				$isLeft = " colspan ='3' ";
-				$itemImgClass = 'sixXthree';
-			}
+					}else if($folder == '1 menu gourmet' || $folder=='2 plateau maison' || $folder=='4 menu degustation' || $folder=='8 menus speciaux')
+							{
+								$colNum = 2;
+								$itemImgClass = 'sixXthree';
+							}else if($folder=='5 menu J' || $folder=='7 tempura' || $folder=='11 plats de chef' || $folder=='12 dessert')
+									{
+										$colNum = 2;
+										$itemImgClass = 'sixXfour';
+									}else if($folder=='3 menus' || $folder == '13 menu brochette')
+											{
+												$colNum = 2;
+												$itemImgClass = 'sixXfive';
+											}else if($folder=='6 chirashi')
+													{
+														$colNum = 2;
+														$itemImgClass = 'sixXsix';
+													}else if($folder == '14 menu shabu shabu')
+															{
+																$colNum = 2;
+																$itemImgClass = 'sevenXthree';
+															}
 						
 			$commenPart = "<td".$isLeft." class='item'>
 								<a href='../"  . $file . "' class='highslide' onclick='return hs.expand(this)'>
@@ -114,10 +121,10 @@ $app->get('/valider', function(Application $app, Request $req) use ($app) {
 	//Configurations
 	$emailServer = 'atelier19.infos@gmail.com';//'bruce.gong.france@gmail.com';
 	$pwdServer = '2014atelier19';
-	$emailResto = 'jardinbambou.info@gmail.com';//'bruce.gong.tmax@gmail.com';
-	$pwdResto = '20140702atelier19';
-	$nicknameResto = 'Jardin Bambou Resto';
-	$endWORD = '<br>Bien cordialement,<br>Atelier 19 <br>106 ave République, 75011 Paris';
+	$emailResto = 'lamaisondefuji@gmail.com';//'bruce.gong.tmax@gmail.com';
+	$pwdResto = 'lamaisondefujihuang';
+	$nicknameResto = 'La Maison de FUJI';
+	$endWORD = '<br>Bien cordialement,<br>La maison de FUJI <br>79 Rue de la Paroisse, 78000 Versailles';
 	
 	//send first email from Server to Resto
 	$Account = $emailServer;
@@ -147,17 +154,17 @@ $app->post('/avis', function(Request $request) use ($app) {
 	require_once('emailSender/gmailSender.php');
 	//get all the infos of message
     $clientName = $request->get('clientName');
-    $clientEmail = $request->get('email');
-    $clientPhone = $request->get('phone');
+    $clientEmail = $request->get('time');
+    $clientPhone = $request->get('number');
     $clientMessage = $request->get('message');
 	
 	//configuration of email accounts
 	$emailServer = 'atelier19.infos@gmail.com';//'bruce.gong.france@gmail.com';
 	$pwdServer = '2014atelier19';
-	$emailResto = 'jardinbambou.info@gmail.com';//'bruce.gong.tmax@gmail.com';
-	$pwdResto = '20140702atelier19';
-	$nicknameResto = 'Jardin Bambou Resto';
-	$endWORD = '<br><br>Bien cordialement,<br>Atelier 19 <br>106 ave République, 75011 Paris';
+	$emailResto = 'lamaisondefuji@gmail.com';//'bruce.gong.tmax@gmail.com';
+	$pwdResto = 'lamaisondefujihuang';
+	$nicknameResto = 'La Maison de FUJI';
+	$endWORD = '<br><br>Bien cordialement,<br>GONG Zhe <br>22 rue Racine, 78000 Versailles';
 	
 	
 	//send email from Server to Resto
@@ -165,18 +172,18 @@ $app->post('/avis', function(Request $request) use ($app) {
 	$Pwd = $pwdServer;
 	$From = array($Account => 'Atelier 19');
 	$ToList = array($emailResto => $nicknameResto);
-	$Subjet = 'Nouveau MESSAGE';
-	$Content = 'Bonjour,<br><br>Vous avez reçu une nouvelle MESSAGE:<br><br>'
+	$Subjet = 'Nouveau RESERVATION';
+	$Content = 'Bonjour,<br><br>Vous avez reçu une nouvelle RESERVATION:<br><br>'
 				."Nom : $clientName<br>"
-				."Email : $clientEmail<br>"
-				."Phone : $clientPhone<br>"
+				."Temps : $clientEmail<br>"
+				."Nb de places : $clientPhone<br>"
 				."Message : $clientMessage".$endWORD;
     $result = sendGmail($app, $Account, $Pwd, $From, $ToList, $Subjet, $Content);
 	
 	if($result === 1)
 	{
-		return $app->redirect('/View/contact.html');	//works well on the server, due to the server recognize the /web as the root.
-		//return $app->redirect('/jardinbambou/web/View/contact.html');   //works well on localhost.
+		//return $app->redirect('/View/contact.html');	//works well on the server, due to the server recognize the /web as the root.
+		return $app->redirect('/lamaisondefuji/web/View/contact.html');   //works well on localhost.
 		}else{
 			return new Response('We failed to send the message to Restaurant. Please try again later...', 201);
 			}

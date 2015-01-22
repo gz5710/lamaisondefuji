@@ -1,5 +1,5 @@
 /*
- * jQuery Nivo Slider v2.7.1
+ * jQuery Nivo Slider v2.4
  * http://nivo.dev7studios.com
  *
  * Copyright 2011, Gilbert Pellegrom
@@ -10,17 +10,15 @@
  */
  
  
-/* ----- General Slider Style ----- */
+/* The Nivo Slider styles */
 .nivoSlider {
 	position:relative;
 }
-
 .nivoSlider img {
 	position:absolute;
 	top:0px;
 	left:0px;
 }
-
 /* If an image is wrapped in a link */
 .nivoSlider a.nivo-imageLink {
 	position:absolute;
@@ -34,278 +32,144 @@
 	z-index:60;
 	display:none;
 }
-
-/* The slices and boxes in the Slider */
+/* The slices in the Slider */
 .nivo-slice {
 	display:block;
 	position:absolute;
 	z-index:50;
 	height:100%;
 }
-
-.nivo-box {
-	display:block;
-	position:absolute;
-	z-index:50;
-}
-
 /* Caption styles */
 .nivo-caption {
 	position:absolute;
-	left:-23px;
-	bottom:40px;
-	background-image:url('themes/default/slider_ribbon2.html');
+	left:0px;
+	bottom:0px;
+	background:#000;
 	color:#fff;
-	/* Overridden by captionOpacity setting */
-	width:340px;
-	z-index:80;
-	height:100px;
+	opacity:0.8; /* Overridden by captionOpacity setting */
+	width:100%;
+	z-index:89;
 }
-
 .nivo-caption p {
-	padding:5px;
+	padding: 15px 30px 40px 30px;
 	margin:0;
+	line-height: 1.5em;
 }
-
 .nivo-caption a {
 	display:inline !important;
 }
-
 .nivo-html-caption {
-	display:none;
+    display:none;
 }
-
 /* Direction nav styles (e.g. Next & Prev) */
 .nivo-directionNav a {
 	position:absolute;
 	top:45%;
-	z-index:90;
+	z-index:99;
 	cursor:pointer;
 }
-
 .nivo-prevNav {
 	left:0px;
 }
-
 .nivo-nextNav {
 	right:0px;
 }
-
 /* Control nav styles (e.g. 1,2,3...) */
+
 .nivo-controlNav a {
 	position:relative;
-	z-index:90;
+	z-index:99;
 	cursor:pointer;
 }
-
 .nivo-controlNav a.active {
 	font-weight:bold;
 }
 
-/* 
-	----- Pascal Theme -----
-	(used for main slider)
-	
- (
-Skin Name: Pascal Theme
-Skin URI: http://nivo.dev7studios.com
-Skin Type: fixed
-Image Width: 630
-Image Height: 235
-Description: A nice, light skin for the Nivo Slider.
-Version: 1.0
-Author: Gilbert Pellegrom & Pascal Gartner
-Author URI: http://dev7studios.com
-)
+/* CUSTOM SLIDER ------------------------------------------------------------*/
 
-*/
-
-.theme-pascal.slider-wrapper {
-	background:url(../images/pascal_slider.png) no-repeat;
-	width:960px;
-	height:440px;
-	margin:0 auto;
-	padding-top:17px;
-	position:relative;
+#slider-block{
+	background: url(../img/slider-bg.png) repeat-x left bottom ;
+	width: 100%;
+	margin-bottom: 23px;
+	margin-top: 40px;
 }
 
-.theme-pascal .nivoSlider {
-	position:relative;
-	width:910px;
-	height:380px;
-	margin-left:19px;
-	background:url(../images/pascal_loading.gif) no-repeat 50% 50%;
+#slider-holder{
+	width: 906px;
+	height: 447px;
+	margin: 0 auto;
+	background: transparent url(../img/slider-shadow.png) no-repeat center bottom;
 }
 
-.theme-pascal .nivoSlider img {
-	position:absolute;
-	top:0px;
-	left:0px;
-	display:none;
-	width:910px; /* Make sure your images are the same size */
-	height:400px; /* Make sure your images are the same size */
+#slider {
+    position:relative;
+    width:906px; /* Change this to your images width */
+    height: 390px; /*337px + 25px; /* Change this to your images height */
+    background: url(../img/loading.gif) no-repeat 50% 50%;
 }
 
-.theme-pascal .nivoSlider a {
-	border:0;
-	display:block;
+#slider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:none;
 }
 
-.theme-pascal .nivo-controlNav {
-	background:url(../images/pascal_controlnav.png) no-repeat;
-	width:251px;
-	height:40px;
-	position:absolute;
-	left:318px; /* Tweak this to center bullets */
-	bottom:-42px;
-	padding:8px 0 0 92px; 
-	z-index:100;
+#slider a {
+    border:0;
+    display:block;
 }
 
-.theme-pascal .nivo-controlNav a {
-	display:block;
-	width:22px;
-	height:22px;
-	background:url(../images/pascal_bullets.png) no-repeat;
-	text-indent:-9999px;
-	border:0;
-	margin-right:3px;
-	float:left;
+.nivo-controlNav{
+	position: absolute;
+	bottom: -60px;
+	left: 408px;
+	z-index: 9999;
+	height: 56px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-.theme-pascal .nivo-controlNav a.active {
-	background-position:0 -22px;
+.nivo-controlNav a{
+	display: block;
+	float: left;
+	background: url(../img/slider-nav-buttons.png) no-repeat 0px 0px; 
+	height: 13px;
+	width: 13px;
+	margin-top: 21px;
+	margin-right: 2px;
+	margin-left: 2px;
+	text-indent: -9000px;
 }
 
-.theme-pascal .nivo-directionNav a {
-	display:none;
+.nivo-controlNav a:hover{ background-position: -12px 0px;  }
+
+.nivo-controlNav a.active{ background-position: -25px 0px;   }
+
+.nivo-directionNav a{
+	display: block;
+	width: 37px;
+	height: 37px;
+	text-indent: -9000px;
+	background: url(../img/slider-arrows.png) no-repeat transparent;
 }
 
-.theme-pascal .nivo-caption {
-	bottom:30%;
-	left:auto;
-	right:0px;
-	width:auto;
-	max-width:630px;
-	overflow:hidden;
-	background:#fff;
-	text-shadow:none;
-	font-family:Arial, sans-serif;
-	color:#4c4b4b;
+.nivo-directionNav a.nivo-nextNav{ 
+	background-position: 0px 0px;
+	margin-right: -19px;
+	z-index: 1001;
 }
 
-.theme-pascal .nivo-caption p {
-	padding:5px 15px;
-	color:#333;
-	font-weight:bold;
-	font-size:27px;
-	text-transform:uppercase;
+.nivo-directionNav a.nivo-prevNav{ 
+	background-position: -37px 0px;
+	margin-left: -19px;
+	z-index: 1001;
 }
 
-.theme-pascal .nivo-caption a { 
-	color:#333;
-	font-weight:bold;
-	font-size:27px;
-	text-transform:uppercase;
+.nivo-directionNav a.nivo-nextNav:hover{
+	background-position: 0px -37px;
 }
 
-.theme-pascal .ribbon {
-	background:url(../pascal_ribbon.html) no-repeat;
-	width:111px;
-	height:111px;
-	position:absolute;
-	top:-8px;
-	left:-8px;
-	z-index:300;
-}
-
-/* 
-	----- Illustration Theme ----- 
-	(used in illustration to "Our story" on main page) 
-*/
-
-.theme-illustration .nivoSlider {
-	position:relative;
-	background:#fff url(../images/illu_loading.gif) no-repeat 50% 50%;
-	margin-bottom:50px;
-	border:5px solid #e8e8e8;
-}
-
-.theme-illustration .nivoSlider img {
-	position:absolute;
-	top:0px;
-	left:0px;
-	display:none;
-}
-
-.theme-illustration .nivoSlider a {
-	border:0;
-	display:block;
-}
-
-.theme-illustration .nivo-controlNav {
-	position:absolute;
-	right:0px; /* Tweak this to center bullets */
-	bottom:-29px;
-}
-
-.theme-illustration .nivo-controlNav a {
-	display:block;
-	width:20px;
-	height:22px;
-	background:url(../images/illu_bullets.png) no-repeat;
-	text-indent:-9999px;
-	border:0;
-	margin-right:0px;
-	float:right;
-}
-
-.theme-illustration .nivo-controlNav a.active {
-	background-position:0 -22px;
-}
-
-.theme-illustration .nivo-directionNav a {
-	display:block;
-	width:30px;
-	height:30px;
-	background:url(../images/illu_arrows.html) no-repeat;
-	text-indent:-9999px;
-	border:0;
-}
-
-.theme-illustration a.nivo-nextNav {
-	background-position:-30px 0;
-	right:15px;
-}
-
-.theme-illustration a.nivo-prevNav {
-	left:15px;
-}
-
-.theme-illustration .nivo-caption {
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:0.9em;
-	text-shadow:1px 1px 0px #000;
-	background-color:#000;
-	background-image:none !important;
-	bottom:0px;
-	left:0px;
-	font-size:1.2em;
-	height:40px;
-	width:260px;
-	opacity:0.8;
-	color:#fff;
-}
-
-.theme-illustration .nivo-caption  p{ 
-	color:#fff !important;
-}
-
-.theme-illustration .nivo-caption a {
-	border-bottom:1px dotted #fff;
-	text-decoration:none;
-}
-
-.theme-illustration .nivo-caption a:hover {
-	color:#fff;
+.nivo-directionNav a.nivo-prevNav:hover{
+	background-position: -37px -37px;
 }

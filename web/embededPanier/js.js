@@ -1,7 +1,7 @@
 // JavaScript Document
 //load all the images from indicated folder.
 window.onload=function(){
-	var folder = '1-1 Les portages a savoures';
+	var folder = '1 menu gourmet';
 	selectCategorie(folder);
 }
 

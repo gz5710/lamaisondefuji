@@ -16,9 +16,9 @@ Total height: 125+10+220+10+1000=1365；
 	margin-top:10px;
 	padding-left:5px;
 	padding-right:10px;
-/*	font:14px "Trebuchet MS", Arial, Helvetica, sans-serif;*/
+	/*	font:14px "Trebuchet MS", Arial, Helvetica, sans-serif;*/
 	font-size:14px;
-	font-family:Arial, sans-serif;
+	font-family:Lucida Calligraphy;
 	background:url(../View/images/new_bg_Panier.png);
 	font-family:Arial, Helvetica, sans-serif;
 	}
@@ -95,8 +95,8 @@ Total height: 125+10+220+10+1000=1365；
 	}
 
 .imgItemCommand{
-	width:40px;
-	height:50px;	
+	width:20px;
+	height:20px;	
 	}
 	
 .item{
@@ -106,7 +106,7 @@ Total height: 125+10+220+10+1000=1365；
 	
 .item label{
 	text-align:center;
-	color:#BB0970;
+	/*color:#999;*/
 	font-size:13px;
 	font-family:Arial, sans-serif;
 	}
@@ -116,18 +116,18 @@ Total height: 125+10+220+10+1000=1365；
 	margin-top:10px;
 	width:70px;
 	color:white;
-	background-color:#BB0970;
+	background-color:#999;
 	font-size:16px;
 	font-family:"Courier New", Courier, monospace;
 	}
 
 .btnQuantite{
-	width:30px;
+	width:20px;
 	height:20px;
-	/*border-radius: 20px;
-	padding-left:5px;*/
+	border-radius: 20px;
+	padding-left:5px;
 	margin-right:5px;
-	background-color:#FFB3B3;
+	background-color:#999;
 	}
 	
 #tbQuantite{
@@ -151,8 +151,8 @@ Total height: 125+10+220+10+1000=1365；
 	position:absolute;
 	height:350px;
 	z-index:3;
-	margin-top:10px;
-	margin-left:10px;
+	margin-top:-150px;
+	margin-left:100px;
 	/*left:expression((document.body.offsetWidth-540)/2);
 	top:expression((document.body.offsetHeight-170)/2);*/
 	background-color:#FFF;
@@ -166,11 +166,11 @@ Total height: 125+10+220+10+1000=1365；
 	vertical-align:middle;
 	
 	position:absolute;
-	height:500px;
-	width:350px;
+	height:350px;
+	width:380px;
 	z-index:4;
-	margin-top:10px;
-	margin-left:10px;
+	margin-top:-150px;
+	margin-left:100px;
 	/*left:expression((document.body.offsetWidth-540)/2);
 	top:expression((document.body.offsetHeight-170)/2);*/
 	background-color:black;
@@ -195,13 +195,33 @@ Total height: 125+10+220+10+1000=1365；
 .threeXtwo{
 	width:150px;
 	height:100px;	
-	}	
-.sixXthree{
-	width:300px;
-	height:150px;	
-	}	
+	}		
+.sixXhalf{
+	width:600px;
+	height:50px;	
+	}		
 .sixXtwo{
 	width:300px;
 	height:100px;	
+	}
+.sixXthree{
+	width:300px;
+	height:150px;	
+	}
+.sixXfour{
+	width:300px;
+	height:200px;	
+	}	
+.sixXfive{
+	width:300px;
+	height:250px;	
+	}
+.sixXsix{
+	width:300px;
+	height:300px;	
+	}	
+.sevenXthree{
+	width:700px;
+	height:350px;	
 	}	
 /*size of the images of items*/
