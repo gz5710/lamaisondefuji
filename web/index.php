@@ -182,8 +182,8 @@ $app->post('/avis', function(Request $request) use ($app) {
 	
 	if($result === 1)
 	{
-		//return $app->redirect('/View/contact.html');	//works well on the server, due to the server recognize the /web as the root.
-		return $app->redirect('/lamaisondefuji/web/View/contact.html');   //works well on localhost.
+		return $app->redirect('/View/contact.html');	//works well on the server, due to the server recognize the /web as the root.
+		//return $app->redirect('/lamaisondefuji/web/View/contact.html');   //works well on localhost.
 		}else{
 			return new Response('We failed to send the message to Restaurant. Please try again later...', 201);
 			}
