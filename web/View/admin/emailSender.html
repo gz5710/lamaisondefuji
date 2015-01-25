@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Company - Admin | Atelier19</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+<script language="javascript" type="text/javascript" src="../admin/js/common.js"></script>
+<script language="javascript" type="text/javascript" src="../admin/js/company.js"></script>
+
+<!-- Editor -->
+<script src="//cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
+<!-- End Editor -->
+
+</head>
+
+<body>
+<div id="main">
+<h1 style="margin:auto">发送群邮件</h1>
+<hr />
+<table width="960" style="margin:auto; margin-top:100px">
+    <tr>
+      <td colspan="5" id="content">
+      邮件标题：<input id="Title" name="Title" type="text"/><br /><br />
+      公司简介：<br /><br /><textarea id="Content" name="Content"></textarea>
+        <script>
+            var editor = CKEDITOR.replace( 'Content' );
+        </script><br /><br />
+  		<input type="button" value="发 送" onclick="saveCompany();"/>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

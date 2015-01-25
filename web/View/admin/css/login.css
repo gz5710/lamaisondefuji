@@ -1,0 +1,15 @@
+/* CSS Document */
+
+#password{
+	margin-left:10px;
+}
+
+#btnLogin{
+	margin-left:178px;
+}
+
+#tag{
+	color:#F00;
+	display:none;
+	font-size:10px;
+}

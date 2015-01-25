@@ -8,7 +8,40 @@ use Symfony\Component\HttpFoundation\Response;
 $app = new Silex\Application();
 $app['debug'] = true;
 
+//Email Service
 $app->register(new Silex\Provider\SwiftmailerServiceProvider());
+
+//Database Service
+define('DB_HOST', getenv('OPENSHIFT_MYSQL_DB_HOST'));
+define('DB_PORT', getenv('OPENSHIFT_MYSQL_DB_PORT'));
+define('DB_USER', getenv('OPENSHIFT_MYSQL_DB_USERNAME'));
+define('DB_PASS', getenv('OPENSHIFT_MYSQL_DB_PASSWORD'));
+define('DB_NAME', getenv('OPENSHIFT_GEAR_NAME'));
+
+$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => array(
+        'driver' => 'pdo_mysql',
+        'host' => DB_HOST,
+		'port' => DB_PORT,
+        'dbname' => DB_NAME,
+        'user' => DB_USER,
+        'password' => DB_PASS,
+		'charset'   => 'utf8'
+    ),
+));
+
+//Database Service
+/*$app->register(new Silex\Provider\DoctrineServiceProvider(), array(
+    'db.options' => array(
+        'driver' => 'pdo_mysql',
+        'host' => '127.0.0.1',
+		'port' => '3306',
+        'dbname' => 'lamaisondefuji',
+        'user' => 'admink2PrdiS',
+        'password' => '7p6s5CmiiN42',
+		'charset'   => 'utf8'
+    ),
+));*/
 
 $app->get('/', function() use ($app) {
     return $app->sendFile('View/homepage.html');
@@ -124,7 +157,7 @@ $app->get('/valider', function(Application $app, Request $req) use ($app) {
 	$emailResto = 'lamaisondefuji@gmail.com';//'bruce.gong.tmax@gmail.com';
 	$pwdResto = 'lamaisondefujihuang';
 	$nicknameResto = 'La Maison de FUJI';
-	$endWORD = '<br>Bien cordialement,<br>La maison de FUJI <br>79 Rue de la Paroisse, 78000 Versailles';
+	$endWORD = '<br>Bien cordialement,<br><br>La maison de FUJI <br>79 Rue de la Paroisse,<br>78000 Versailles';
 	
 	//send first email from Server to Resto
 	$Account = $emailServer;
@@ -143,7 +176,11 @@ $app->get('/valider', function(Application $app, Request $req) use ($app) {
 	$Subjet = 'Confirmation de commande - No reply';
 	$Content = 'Bonjour,<br><br>Vous avez commandé en ligne:<br><br>'.$command.$endWORD;
 	$result2 = sendGmail($app, $Account, $Pwd, $From, $ToList, $Subjet, $Content);
-		
+	
+	//save the emails used
+	$sql = 'INSERT INTO command(email, command) VALUES(?,?)';
+	$result = $app['db']->executeUpdate($sql, array($emailClient, $command));
+	
 	$data = array('result1' => $result1,
 					'result2' => $result2);
 	return $app->json($data);
@@ -164,7 +201,7 @@ $app->post('/avis', function(Request $request) use ($app) {
 	$emailResto = 'lamaisondefuji@gmail.com';//'bruce.gong.tmax@gmail.com';
 	$pwdResto = 'lamaisondefujihuang';
 	$nicknameResto = 'La Maison de FUJI';
-	$endWORD = '<br><br>Bien cordialement,<br>GONG Zhe <br>22 rue Racine, 78000 Versailles';
+	$endWORD = '<br><br>Bien cordialement,<br>GONG Zhe <br>22 rue Racine,<br>78000 Versailles';
 	
 	
 	//send email from Server to Resto
