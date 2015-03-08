@@ -284,7 +284,7 @@ function confirmForm(){
     if(second.toString().length == 1) {
         var second = '0'+second;
     }   
-    var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;   
+    var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;   alert(dateTime);
 	var commandHTML = '<strong><h2>'+modeInfo+'</h2></strong><br><strong>Arrivé :</strong> '+ dateTime
 												+'<br><strong>Nom :</strong> '+nameClient
 												+'<br> <strong>Tel :</strong> '+telClient
