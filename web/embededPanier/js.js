@@ -262,9 +262,30 @@ function confirmForm(){
 			modeInfo = 'Emporter';
 			waitTime = '<strong>Cherchez après :</strong> ' +waitTimeE+'<br>'
 			}
-	var current = new Date();
-	var commandHTML = '<strong><h2>'+modeInfo+'</h2></strong><br><strong>Arrivé :</strong> '+current.getTime()+" "
-																							+current.getDate()
+	var now     = new Date(); 
+    var year    = now.getFullYear();
+    var month   = now.getMonth()+1; 
+    var day     = now.getDate();
+    var hour    = now.getHours();
+    var minute  = now.getMinutes();
+    var second  = now.getSeconds(); 
+    if(month.toString().length == 1) {
+        var month = '0'+month;
+    }
+    if(day.toString().length == 1) {
+        var day = '0'+day;
+    }   
+    if(hour.toString().length == 1) {
+        var hour = '0'+hour;
+    }
+    if(minute.toString().length == 1) {
+        var minute = '0'+minute;
+    }
+    if(second.toString().length == 1) {
+        var second = '0'+second;
+    }   
+    var dateTime = year+'/'+month+'/'+day+' '+hour+':'+minute+':'+second;   
+	var commandHTML = '<strong><h2>'+modeInfo+'</h2></strong><br><strong>Arrivé :</strong> '+ dateTime
 												+'<br><strong>Nom :</strong> '+nameClient
 												+'<br> <strong>Tel :</strong> '+telClient
 												+'<br> <strong>Email :</strong> '+emailClient
