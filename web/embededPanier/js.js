@@ -262,7 +262,9 @@ function confirmForm(){
 			modeInfo = 'Emporter';
 			waitTime = '<strong>Cherchez après :</strong> ' +waitTimeE+'<br>'
 			}
-	var commandHTML = '<strong><h2>'+modeInfo+'</h2></strong><br><strong>Arrivé :</strong> '+new Date()
+	var current = new Date();
+	var commandHTML = '<strong><h2>'+modeInfo+'</h2></strong><br><strong>Arrivé :</strong> '+current.getTime()+" "
+																							+current.getDate()
 												+'<br><strong>Nom :</strong> '+nameClient
 												+'<br> <strong>Tel :</strong> '+telClient
 												+'<br> <strong>Email :</strong> '+emailClient
