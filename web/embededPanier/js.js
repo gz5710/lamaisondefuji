@@ -151,7 +151,9 @@ function locking(){
 	{
 		alert('Veuillez choisir un plat au moins !');
 		return false;
-	}
+	}else{
+		alert('Commander en ligne : -10%');
+		}
 	document.querySelector('#divScreenLocker').style.width='100%';
 	document.querySelector('#divScreenLocker').style.height='2000px';
 	document.querySelector('#divScreenLocker').style.display='block';
