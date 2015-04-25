@@ -152,7 +152,7 @@ function locking(){
 		alert('Veuillez choisir un plat au moins !');
 		return false;
 	}else{
-		alert('Commander en ligne : -10%');
+		alert('Commander en ligne : -10% (Sauf Boisson)');
 		}
 	document.querySelector('#divScreenLocker').style.width='100%';
 	document.querySelector('#divScreenLocker').style.height='2000px';
