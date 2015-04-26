@@ -14,7 +14,7 @@ lang : {
 	loadingTitle : 'Click to cancel',
 	focusTitle : 'Click to bring to front',
 	fullExpandTitle : 'Expand to actual size (f)',
-	creditsText : 'Powered by <a href="http://www.a19.fr/"><i>Atelier 19</i></a>',
+	creditsText : 'Powered by <a href="http://www.gongzhe.fr/" target="_Blank"><i>Bruce GONG</i></a>',
 	creditsTitle : 'Go to the Highslide JS homepage',
 	restoreTitle : 'Click to close image, click and drag to move. Use arrow keys for next and previous.'
 },
