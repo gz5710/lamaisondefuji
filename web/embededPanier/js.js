@@ -141,7 +141,7 @@ function showPrice()
 	{
 		totalPrice = 0 - totalPrice;
 	}
-	th.innerHTML = 'Total:  '+ totalPrice.toFixed(2) + ' €';	
+	th.innerHTML = 'Total:<br\>'+ totalPrice.toFixed(2) + ' - 10% = ' + (totalPrice * 0.9).toFixed(2) + ' €';	
 }
 
 function locking(){
@@ -303,7 +303,7 @@ function confirmForm(){
 		var price = parseFloat(command.rows[i].getAttribute('price')).toFixed(2);
 		commandHTML += '<li>'+name+' : '+price+' € * '+quantite+'</li>';		
 	}
-	commandHTML += '</ul><br> <h2>TOTAL : <font color="red">'+totalPrice.toFixed(2)+' € </font></h2><br>';
+	commandHTML += '</ul><br> <h2>TOTAL : '+totalPrice.toFixed(2)+' - 10% = <font color="red">'+(totalPrice * 0.9).toFixed(2)+' € </font></h2><br>';
 	console.log(commandHTML);
 	
 	//Ajax
