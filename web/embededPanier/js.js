@@ -141,7 +141,7 @@ function showPrice()
 	{
 		totalPrice = 0 - totalPrice;
 	}
-	th.innerHTML = 'Total:  '+ totalPrice.toFixed(2) + ' €';	
+	th.innerHTML = 'Total:<br\>'+ totalPrice.toFixed(2) + ' - 10% = ' + (totalPrice * 0.9).toFixed(1) + ' €';	
 }
 
 function locking(){
@@ -153,6 +153,8 @@ function locking(){
 		return false;
 	}else{
 		alert('Commander en ligne : -10% (Sauf Boisson)');
+		//alert('FERMETURE EXCEPTIONNELLE\nDu 01 février au 10 février 2016\nMerci de votre compréhension.');
+		//return false;
 		}
 	document.querySelector('#divScreenLocker').style.width='100%';
 	document.querySelector('#divScreenLocker').style.height='2000px';
@@ -303,7 +305,7 @@ function confirmForm(){
 		var price = parseFloat(command.rows[i].getAttribute('price')).toFixed(2);
 		commandHTML += '<li>'+name+' : '+price+' € * '+quantite+'</li>';		
 	}
-	commandHTML += '</ul><br> <h2>TOTAL : <font color="red">'+totalPrice.toFixed(2)+' € </font></h2><br>';
+	commandHTML += '</ul><br> <h2>TOTAL : '+totalPrice.toFixed(2)+' - 10% = <font color="red">'+(totalPrice * 0.9).toFixed(1)+' € </font></h2><br>';
 	console.log(commandHTML);
 	
 	//Ajax
