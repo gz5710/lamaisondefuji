@@ -152,9 +152,9 @@ function locking(){
 		alert('Veuillez choisir un plat au moins !');
 		return false;
 	}else{
-		alert('Commander en ligne : -10% (Sauf Boisson)');
-		//alert('FERMETURE EXCEPTIONNELLE\nDu 01 février au 10 février 2016\nMerci de votre compréhension.');
-		//return false;
+		//alert('Commander en ligne : -10% (Sauf Boisson)');
+		alert('FERMETURE EXCEPTIONNELLE\nDe lundi 08 aout a vendredi 11 aout 2016\nMerci de votre compréhension.');
+		return false;
 		}
 	document.querySelector('#divScreenLocker').style.width='100%';
 	document.querySelector('#divScreenLocker').style.height='2000px';
