@@ -88,7 +88,7 @@ $app->get('/loadImages', function(Application $app, Request $req) use ($app) {
 							{
 								$colNum = 2;
 								$itemImgClass = 'sixXthree';
-							}else if($folder=='5 menu J' || $folder=='7 tempura' || $folder=='11 plats de chef' || $folder=='12 dessert')
+							}else if($folder=='5 menu J' || $folder=='5-5 menu K' || $folder=='7 tempura' || $folder=='11 plats de chef' || $folder=='12 dessert')
 									{
 										$colNum = 2;
 										$itemImgClass = 'sixXfour';
