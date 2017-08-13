@@ -79,8 +79,13 @@
 		<script type="text/javascript" src="js/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 		<!-- ENDS Fancybox -->
 		
-		<script>			
-			alert('FERMETURE EXCEPTIONNELLE\nTous les lundi juillet/août 2017\nMerci de votre compréhension.');
+		<script>
+			var d = new Date();
+			var n = d.getDay();
+			if(n == 1){
+				alert('FERMETURE EXCEPTIONNELLE\nTous les lundi juillet/août 2017\nMerci de votre compréhension.');
+			}
+			alert('FERMETURE EXCEPTIONNELLE\n13 - 16 août 2017\nMerci de votre compréhension.');
 		</script>
 
 	</head>
