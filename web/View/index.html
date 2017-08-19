@@ -82,7 +82,8 @@
 		<script>
 			var d = new Date();
 			var n = d.getDay();
-			if(n == 1){
+			var sept = new Date('2017-09-01');
+			if(n == 1 && d < sept){
 				alert('FERMETURE EXCEPTIONNELLE\nTous les lundi juillet/août 2017\nMerci de votre compréhension.');
 			}
 			var end = new Date('2017-08-17');
